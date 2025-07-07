@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Development Wing - IIT Kanpur</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: '#4f46e5',
+        secondary: '#10b981'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+  font-family: 'Inter', sans-serif;
+}
+.hero-section {
+  background-image: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 40%, rgba(255,255,255,0.1) 100%), url('https://static.readdy.ai/image/35e1c9ff51a554d6209e391010b44104/9e70e6573dcc8bd1218f3276208f45d8.webp');
+  background-size: cover;
+  background-position: center right;
+}
+.dark .hero-section {
+  background-image: linear-gradient(to right, rgba(17,24,39,1) 0%, rgba(17,24,39,0.9) 40%, rgba(17,24,39,0.1) 100%), url('https://static.readdy.ai/image/35e1c9ff51a554d6209e391010b44104/9e70e6573dcc8bd1218f3276208f45d8.webp');
+  /* 17,24,39 is Tailwind's gray-900 */
+  background-size: cover;
+  background-position: center right;
+}
+.stats-section {
+  background-image: linear-gradient(to right, rgba(79, 70, 229, 0.9), rgba(79, 70, 229, 0.8)), url('https://readdy.ai/api/search-image?query=abstract%20pattern%20with%20subtle%20grid%20lines%2C%20professional%20light%20blue%20background%2C%20minimal%20design%2C%20corporate%20style%2C%20clean%20and%20modern%2C%20soft%20texture&width=1600&height=600&seq=2&orientation=landscape');
+  background-size: cover;
+  background-position: center;
+}
+.custom-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+</style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-black dark:text-white">
+<!-- Header -->
+<header class="bg-white dark:bg-gray-950 shadow-sm sticky top-0 z-50">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center gap-2">
+<a href="https://www.anciitk.co.in/" class="flex items-center">
+  <img src="https://static.readdy.ai/image/35e1c9ff51a554d6209e391010b44104/b47d179626fcdc00364e894759c4d3ce.png" alt="CDEV Logo" class="h-10 w-auto">
+  <span class="text-xl font-bold text-black dark:text-white">CDEV</span>
+</a>
+</div>
+<div class="hidden md:block text-center">
+<span class="text-black dark:text-white font-medium">Academics and Career Council, IIT Kanpur</span>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="text-primary font-medium">Home</a>
+<a href="#about" class="text-black dark:text-white hover:text-primary font-medium">About</a>
+<a href="#itp" class="text-black dark:text-white hover:text-primary font-medium">ITP</a>
+<a href="#collaborations" class="text-black dark:text-white hover:text-primary font-medium">Collaborations</a>
+<a href="#contact" class="text-black dark:text-white hover:text-primary font-medium">Contact</a>
+<!-- Dark Mode Toggle -->
+<button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors">
+  <i id="theme-toggle-icon" class="ri-sun-line"></i>
+</button>
+</nav>
+<!-- Mobile Navigation Button -->
+<div class="md:hidden flex items-center gap-2">
+<button id="theme-toggle-mobile" class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300">
+<i class="ri-sun-line"></i>
+</button>
+<button id="mobile-menu-button" class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Navigation Menu -->
+<div id="mobile-menu" class="md:hidden hidden pb-4 bg-white dark:bg-gray-950">
+<div class="flex flex-col space-y-3">
+<a href="#" class="text-primary font-medium py-2">Home</a>
+<a href="#about" class="text-black dark:text-white hover:text-primary font-medium py-2">About</a>
+<a href="#itp" class="text-black dark:text-white hover:text-primary font-medium py-2">ITP</a>
+<a href="#collaborations" class="text-black dark:text-white hover:text-primary font-medium py-2">Collaborations</a>
+<a href="#contact" class="text-black dark:text-white hover:text-primary font-medium py-2">Contact</a>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section py-20 md:py-32">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">Career Development Wing</h1>
+<p class="text-xl text-gray-700 dark:text-gray-300 mb-8">Empowering students with the skills and opportunities to build successful careers through guidance, training, and industry connections.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#about" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 transition whitespace-nowrap">Learn More</a>
+<a href="#contact" class="bg-white dark:bg-gray-950 text-primary border border-primary px-6 py-3 rounded-button font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition whitespace-nowrap">Contact Us</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Initiatives -->
+<section class="py-16 bg-white dark:bg-gray-950">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-black dark:text-white mb-4">Our Key Initiatives</h2>
+<p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Discover the programs and services offered by the Career Development Wing to help students navigate their professional journey.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Initiative 1 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-briefcase-line text-primary ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-black dark:text-white mb-3">Internship Training Program</h3>
+<p class="text-gray-600 dark:text-gray-300 mb-4">Comprehensive training to prepare students for internship opportunities at top companies through mock interviews, resume building, and technical preparation.</p>
+<a href="#itp" class="text-primary font-medium flex items-center">
+Learn more
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Initiative 2 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-team-line text-primary ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-black dark:text-white mb-3">Industry Collaborations</h3>
+<p class="text-gray-600 dark:text-gray-300 mb-4">Strategic partnerships with leading organizations like GeeksForGeeks to provide students with exclusive resources, workshops, and placement opportunities.</p>
+<a href="#collaborations" class="text-primary font-medium flex items-center">
+Learn more
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Initiative 3 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-file-list-3-line text-primary ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-black dark:text-white mb-3">Resume Reviews</h3>
+<p class="text-gray-600 dark:text-gray-300 mb-4">Personalized resume feedback sessions conducted by experienced professionals to help students create impactful resumes that stand out to recruiters.</p>
+<a href="#about" class="text-primary font-medium flex items-center">
+Learn more
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="stats-section py-16 text-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Our Impact</h2>
+      <p class="max-w-3xl mx-auto">The Career Development Wing has been instrumental in shaping the professional journeys of IIT Kanpur students.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <!-- Stat 1 -->
+      <div class="text-center">
+        <div class="text-4xl font-bold mb-2">500+</div>
+        <p class="text-white/90">Students Placed</p>
+      </div>
+      <!-- Stat 3 -->
+      <div class="text-center">
+        <div class="text-4xl font-bold mb-2">200+</div>
+        <p class="text-white/90">Workshops Conducted</p>
+      </div>
+      <!-- Stat 4 -->
+      <div class="text-center">
+        <div class="text-4xl font-bold mb-2">1000+</div>
+        <p class="text-white/90">Resume Reviews</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-16 bg-white dark:bg-gray-950">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-black dark:text-white mb-4">About Us</h2>
+<p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">The Career Development Wing operates under the Academics and Career Council of IIT Kanpur, dedicated to enhancing students' professional growth.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+<div>
+<h3 class="text-2xl font-semibold text-black dark:text-white mb-4">Our Mission</h3>
+<p class="text-gray-600 dark:text-gray-300 mb-6">The Career Development Wing aims to bridge the gap between academic knowledge and industry requirements by providing comprehensive training, resources, and opportunities to students. We strive to equip every student with the skills and confidence needed to excel in their professional careers.</p>
+<h3 class="text-2xl font-semibold text-black dark:text-white mb-4">Our Vision</h3>
+<p class="text-gray-600 dark:text-gray-300">To create a robust ecosystem that nurtures professional growth, facilitates industry connections, and empowers students to achieve their career aspirations, making IIT Kanpur a hub for future leaders and innovators.</p>
+</div>
+<div class="rounded-lg overflow-hidden">
+<img src="https://static.readdy.ai/image/35e1c9ff51a554d6209e391010b44104/9debe3ad2d2c0cf1b741946acff1a1d6.webp" alt="Career Development Wing in action" class="w-full h-full object-cover object-top">
+</div>
+</div>
+<!-- Services Section -->
+<div class="mb-16">
+<h3 class="text-2xl font-semibold text-black dark:text-white mb-8 text-center">Our Services</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Service 1 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-user-voice-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-3">Career Counseling</h4>
+<p class="text-gray-600 dark:text-gray-300">One-on-one sessions with experienced counselors to help students identify their strengths and career paths.</p>
+</div>
+<!-- Service 2 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-file-list-3-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-3">Resume Reviews</h4>
+<p class="text-gray-600 dark:text-gray-300">Detailed feedback on resumes to help students create impactful documents that highlight their achievements.</p>
+</div>
+<!-- Service 3 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-chat-3-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-3">Mock Interviews</h4>
+<p class="text-gray-600 dark:text-gray-300">Practice interviews with industry professionals to prepare students for real-world interview scenarios.</p>
+</div>
+<!-- Service 4 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-presentation-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-3">Workshops</h4>
+<p class="text-gray-600 dark:text-gray-300">Regular workshops on various topics like technical skills, soft skills, and industry trends.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ITP Section -->
+<section id="itp" class="py-16 bg-gray-50 dark:bg-gray-900">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-black dark:text-white mb-4">Internship Training Program (ITP)</h2>
+<p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Our flagship program designed to prepare students for securing internships at top companies through comprehensive training and guidance.</p>
+</div>
+<!-- Program Overview -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+<div class="order-2 lg:order-1">
+<h3 class="text-2xl font-semibold text-black dark:text-white mb-4">Program Overview</h3>
+<p class="text-gray-600 dark:text-gray-300 mb-6">The Internship Training Program is a structured initiative that equips students with the necessary skills and knowledge to excel in internship interviews and placements. The program covers technical preparation, soft skills development, resume building, and mock interviews.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="ml-3 text-gray-600 dark:text-gray-300">Comprehensive technical preparation for coding interviews</p>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="ml-3 text-gray-600 dark:text-gray-300">Resume building workshops and personalized feedback</p>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="ml-3 text-gray-600 dark:text-gray-300">Mock interviews with industry professionals</p>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="ml-3 text-gray-600 dark:text-gray-300">Soft skills development sessions</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=university%20students%20in%20a%20training%20workshop%2C%20professional%20setting%2C%20career%20development%2C%20students%20engaged%20in%20learning%2C%20modern%20classroom%2C%20technical%20training%2C%20programming%20session%2C%20high%20quality&width=600&height=400&seq=4&orientation=landscape" alt="Internship Training Program" class="w-full h-full object-cover object-top">
+</div>
+</div>
+<!-- Program Resources -->
+<div class="mb-16">
+<h3 class="text-2xl font-semibold text-black dark:text-white mb-8 text-center">Program Resources</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Sessions -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition group">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+<i class="ri-presentation-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-3">Training Sessions</h4>
+<p class="text-gray-600 dark:text-gray-300 mb-4">Access recordings of our comprehensive training sessions covering technical topics, soft skills, and interview preparation.</p>
+<a href="https://drive.google.com/drive/folders/1zJBCoNXUq-21GLSjNtL3WYQohwTK-M6W" target="_blank" class="inline-flex items-center text-primary hover:text-primary/80 transition">
+<span class="mr-2">Access Sessions</span>
+<i class="ri-external-link-line"></i>
+</a>
+</div>
+<!-- Resources -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition group">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+<i class="ri-book-open-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-3">Preparation Resources</h4>
+<p class="text-gray-600 dark:text-gray-300 mb-4">Comprehensive study materials, practice problems, and interview preparation guides for various roles.</p>
+<a href="https://drive.google.com/drive/folders/1mrAamEIaywvB2Y4L4f1-PugDWsaKa5WM" target="_blank" class="inline-flex items-center text-primary hover:text-primary/80 transition">
+<span class="mr-2">Access Resources</span>
+<i class="ri-external-link-line"></i>
+</a>
+</div>
+<!-- Resumes -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition group">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+<i class="ri-file-list-3-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-3">Sample Resumes</h4>
+<p class="text-gray-600 dark:text-gray-300 mb-4">Collection of successful resume templates and examples for different roles and positions.</p>
+<a href="https://drive.google.com/drive/folders/15RfYWH4yNCOtThR5nuaCxx9lEC2M0YSx" target="_blank" class="inline-flex items-center text-primary hover:text-primary/80 transition">
+<span class="mr-2">View Resumes</span>
+<i class="ri-external-link-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Collaborations Section -->
+<section id="collaborations" class="py-16 bg-white dark:bg-gray-950">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-black dark:text-white mb-4">Our Collaborations</h2>
+<p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Strategic partnerships with industry leaders to provide students with exclusive resources and opportunities.</p>
+</div>
+<!-- Featured Collaboration - GeeksForGeeks -->
+<div class="bg-gradient-to-r from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/20 rounded-lg p-8 mb-16">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center mr-4">
+<i class="ri-code-box-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-2xl font-semibold text-black dark:text-white">GeeksForGeeks Partnership</h3>
+</div>
+<p class="text-gray-600 dark:text-gray-300 mb-6">The Career Development Wing has established a strategic collaboration with GeeksForGeeks, one of India's leading platforms for computer science education. This partnership provides IIT Kanpur students with exclusive access to premium learning resources, coding competitions, and placement preparation materials.</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="ml-3 text-gray-600 dark:text-gray-300">Free access to GeeksForGeeks Premium courses</p>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="ml-3 text-gray-600 dark:text-gray-300">Exclusive webinars and workshops by industry experts</p>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="ml-3 text-gray-600 dark:text-gray-300">Special coding competitions for IIT Kanpur students</p>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="ml-3 text-gray-600 dark:text-gray-300">Mentorship opportunities with GeeksForGeeks experts</p>
+</div>
+</div>
+<a href="#" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 transition inline-block whitespace-nowrap">Access Resources</a>
+</div>
+<div class="rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=coding%20workshop%2C%20students%20learning%20programming%2C%20professional%20IT%20training%2C%20computer%20science%20education%2C%20modern%20classroom%20with%20computers%2C%20technical%20learning%20environment%2C%20high%20quality&width=600&height=400&seq=5&orientation=landscape" alt="GeeksForGeeks Partnership" class="w-full h-full object-cover object-top">
+</div>
+</div>
+</div>
+<!-- Access Instructions -->
+<div class="mb-16">
+<h3 class="text-2xl font-semibold text-black dark:text-white mb-8 text-center">How to Access GeeksForGeeks Resources</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Step 1 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mb-4">
+<span class="text-white font-bold">1</span>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-3">Register with Institute Email</h4>
+<p class="text-gray-600 dark:text-gray-300">Use your official IIT Kanpur email ID to register on the GeeksForGeeks portal through the special link provided by CDev.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mb-4">
+<span class="text-white font-bold">2</span>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-3">Verify Your Enrollment</h4>
+<p class="text-gray-600 dark:text-gray-300">Complete the verification process by providing your roll number and department details.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mb-4">
+<span class="text-white font-bold">3</span>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-3">Access Premium Content</h4>
+<p class="text-gray-600 dark:text-gray-300">Once verified, you'll gain immediate access to all premium resources and features offered under the collaboration.</p>
+</div>
+</div>
+</div>
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-gray-50 dark:bg-gray-900">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-black dark:text-white mb-4">Contact Us</h2>
+<p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Have questions or suggestions? Reach out to our team and we'll get back to you as soon as possible.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Contact Form -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-8 custom-shadow">
+<h3 class="text-2xl font-semibold text-black dark:text-white mb-6">Send us a message</h3>
+<form>
+<div class="mb-6">
+<label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary bg-white dark:bg-gray-950 text-black dark:text-white" placeholder="Enter your name">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary bg-white dark:bg-gray-950 text-black dark:text-white" placeholder="Enter your email">
+</div>
+<div class="mb-6">
+<label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+<div class="relative">
+<select id="subject" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded appearance-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary pr-8 bg-white dark:bg-gray-950 text-black dark:text-white">
+<option value="">Select a subject</option>
+<option value="general">General Inquiry</option>
+<option value="itp">Internship Training Program</option>
+<option value="collaboration">Collaboration Opportunities</option>
+<option value="feedback">Feedback</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-400 dark:text-gray-300"></i>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded resize-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary bg-white dark:bg-gray-950 text-black dark:text-white" placeholder="Enter your message"></textarea>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 transition whitespace-nowrap">Send Message</button>
+</form>
+</div>
+<!-- Team Managers -->
+<div>
+<h3 class="text-2xl font-semibold text-black dark:text-white mb-6">Our Team Managers</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Manager 1 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
+<div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
+<i class="ri-user-line ri-xl"></i>
+</div>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-1">Aayush Kumar</h4>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">Manager, Career Development Wing</p>
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+<i class="ri-mail-line mr-2"></i>
+<a href="mailto:aayushk23@iitk.ac.in" class="hover:text-primary">aayushk23@iitk.ac.in</a>
+</div>
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+<i class="ri-linkedin-box-line mr-2"></i>
+<a href="https://www.linkedin.com/in/aayush-kumar-18a69b289/?originalSubdomain=in" class="hover:text-primary">LinkedIn Profile</a>
+</div>
+</div>
+<!-- Manager 2 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
+<div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
+<i class="ri-user-line ri-xl"></i>
+</div>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-1">Ayush Kumar</h4>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">Manager, Career Development Wing</p>
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+<i class="ri-mail-line mr-2"></i>
+<a href="mailto:ayushkumar23@iitk.ac.in" class="hover:text-primary">ayushkumar23@iitk.ac.in</a>
+</div>
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+<i class="ri-linkedin-box-line mr-2"></i>
+<a href="https://www.linkedin.com/in/ayush-kumar-754772287/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover:text-primary">LinkedIn Profile</a>
+</div>
+</div>
+<!-- Manager 3 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
+<div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
+<i class="ri-user-line ri-xl"></i>
+</div>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-1">Aditya Sati</h4>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">Manager, Career Development Wing</p>
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+<i class="ri-mail-line mr-2"></i>
+<a href="mailto:aityasati23@iitk.ac.in" class="hover:text-primary">aityasati23@iitk.ac.in</a>
+</div>
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+<i class="ri-linkedin-box-line mr-2"></i>
+<a href="https://www.linkedin.com/in/aditya-sati-55a94a2a3/?originalSubdomain=in" class="hover:text-primary">LinkedIn Profile</a>
+</div>
+</div>
+<!-- Manager 4 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
+<div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
+<div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
+<i class="ri-user-line ri-xl"></i>
+</div>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-1">Aryamann Srivastava</h4>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">Manager, Career Development Wing</p>
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+<i class="ri-mail-line mr-2"></i>
+<a href="mailto:aryamanns23@iitk.ac.in" class="hover:text-primary">aryamanns23@iitk.ac.in</a>
+</div>
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+<i class="ri-linkedin-box-line mr-2"></i>
+<a href="https://www.linkedin.com/in/aryamann-srivastava-033674280/?originalSubdomain=in" class="hover:text-primary">LinkedIn Profile</a>
+</div>
+</div>
+<!-- Manager 5 -->
+<div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition col-span-1 sm:col-span-2 md:col-span-1 mx-auto sm:mx-0 sm:col-start-1 md:col-start-auto">
+<div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
+<div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
+<i class="ri-user-line ri-xl"></i>
+</div>
+</div>
+<h4 class="text-lg font-semibold text-black dark:text-white mb-1">Karmanya Goyal</h4>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">Manager, Career Development Wing</p>
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+<i class="ri-mail-line mr-2"></i>
+<a href="mailto:karmanya23@iitk.ac.in" class="hover:text-primary">karmanya23@iitk.ac.in</a>
+</div>
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+<i class="ri-linkedin-box-line mr-2"></i>
+<a href="https://www.linkedin.com/in/karmanya-goyal-333b5b1aa/?originalSubdomain=in" class="hover:text-primary">LinkedIn Profile</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Column 1 -->
+<div>
+<h3 class="text-xl font-semibold mb-4">Career Development Wing</h3>
+<p class="text-gray-400 mb-6">Empowering students to build successful careers through guidance, training, and industry connections.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<!-- Column 2 -->
+<div>
+<h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+<li><a href="#itp" class="text-gray-400 hover:text-white transition">Internship Training Program</a></li>
+<li><a href="#collaborations" class="text-gray-400 hover:text-white transition">Collaborations</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+</ul>
+</div>
+<!-- Column 3 -->
+<div>
+<h3 class="text-xl font-semibold mb-4">Resources</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition">Resume Templates</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Interview Preparation</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Technical Resources</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Career Guidance</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Workshops & Events</a></li>
+</ul>
+</div>
+<!-- Column 4 -->
+<div>
+<h3 class="text-xl font-semibold mb-4">Contact</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-map-pin-line mt-1 mr-3"></i>
+<span class="text-gray-400">Career Development Wing, IIT Kanpur, Kanpur, UP 208016</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<a href="mailto:anc@iitk.ac.in" class="text-gray-400 hover:text-white transition">anc@iitk.ac.in</a>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span class="text-gray-400">+91 512 259 7236</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 mb-4 md:mb-0">© 2025 Career Development Wing, IIT Kanpur. All rights reserved.</p>
+<p class="text-gray-400">Designed by <span class="text-white">Abhinav Kumar Pandey</span></p>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 shadow-lg">
+<i class="ri-arrow-up-line ri-lg"></i>
+</button>
+<!-- Scripts -->
+<script id="theme-and-menu-script">
+document.addEventListener('DOMContentLoaded', function() {
+// Theme toggle functionality
+function toggleTheme() {
+const isDark = document.documentElement.classList.contains('dark');
+const themeToggleIcon = document.getElementById('theme-toggle').querySelector('i');
+const themeToggleMobileIcon = document.getElementById('theme-toggle-mobile').querySelector('i');
+if (isDark) {
+document.documentElement.classList.remove('dark');
+localStorage.setItem('theme', 'light');
+themeToggleIcon.classList.remove('ri-moon-line');
+themeToggleIcon.classList.add('ri-sun-line');
+themeToggleMobileIcon.classList.remove('ri-moon-line');
+themeToggleMobileIcon.classList.add('ri-sun-line');
+} else {
+document.documentElement.classList.add('dark');
+localStorage.setItem('theme', 'dark');
+themeToggleIcon.classList.remove('ri-sun-line');
+themeToggleIcon.classList.add('ri-moon-line');
+themeToggleMobileIcon.classList.remove('ri-sun-line');
+themeToggleMobileIcon.classList.add('ri-moon-line');
+}
+}
+// Check for saved theme preference and update icons accordingly
+const savedTheme = localStorage.getItem('theme') || 'light';
+const themeToggleIcon = document.getElementById('theme-toggle').querySelector('i');
+const themeToggleMobileIcon = document.getElementById('theme-toggle-mobile').querySelector('i');
+if (savedTheme === 'dark') {
+document.documentElement.classList.add('dark');
+themeToggleIcon.classList.remove('ri-sun-line');
+themeToggleIcon.classList.add('ri-moon-line');
+themeToggleMobileIcon.classList.remove('ri-sun-line');
+themeToggleMobileIcon.classList.add('ri-moon-line');
+}
+// Theme toggle buttons
+const themeToggle = document.getElementById('theme-toggle');
+const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+themeToggle.addEventListener('click', toggleTheme);
+themeToggleMobile.addEventListener('click', toggleTheme);
+// Mobile menu functionality
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+// Toggle icon
+const icon = mobileMenuButton.querySelector('i');
+if (mobileMenu.classList.contains('hidden')) {
+icon.classList.remove('ri-close-line');
+icon.classList.add('ri-menu-line');
+} else {
+icon.classList.remove('ri-menu-line');
+icon.classList.add('ri-close-line');
+}
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+const icon = mobileMenuButton.querySelector('i');
+icon.classList.remove('ri-close-line');
+icon.classList.add('ri-menu-line');
+});
+});
+});
+</script>
+<script id="back-to-top-script">
+document.addEventListener('DOMContentLoaded', function() {
+const backToTopButton = document.getElementById('back-to-top');
+// Show/hide button based on scroll position
+window.addEventListener('scroll', function() {
+if (window.pageYOffset > 300) {
+backToTopButton.classList.remove('opacity-0', 'invisible');
+backToTopButton.classList.add('opacity-100', 'visible');
+} else {
+backToTopButton.classList.remove('opacity-100', 'visible');
+backToTopButton.classList.add('opacity-0', 'invisible');
+}
+});
+// Scroll to top when button is clicked
+backToTopButton.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+</script>
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+// Only prevent default if the href is not just "#"
+if (this.getAttribute('href') !== '#') {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80, // Adjust for header height
+behavior: 'smooth'
+});
+}
+}
+});
+});
+});
+</script>
+</body>
+</html>
