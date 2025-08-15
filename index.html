@@ -70,15 +70,11 @@ body {
 <a href="https://www.anciitk.co.in/" class="flex items-center ">
   <img src="./Cdev_logo.png" alt="CDEV Logo" class="h-20 w-auto mr-4">           
   <img src="https://www.anciitk.co.in/favicon.ico" alt="CDEV Logo" class="h-10 w-auto">
-<a href="https://www.anciitk.co.in/" class="flex items-center">
-<!--   <img src="https://static.readdy.ai/image/35e1c9ff51a554d6209e391010b44104/b47d179626fcdc00364e894759c4d3ce.png" alt="CDEV Logo" class="h-10 w-auto"> -->
-  <img src="https://www.anciitk.co.in/_next/image?url=%2Fimages%2Flogo%2Fcdev.png&w=640&q=75" alt="CDEV Logo" class="h-20 w-auto">
 
 </a>
 </div>
 <div class="hidden md:block text-center">
 <span class="text-black dark:text-white font-medium">Career and Developement &ndash; Academic and Career Council, IIT Kanpur</span>
-<span class="text-black dark:text-white font-medium">Career Developement Wing &ndash;AnC Council, IIT Kanpur</span>
 </div>
 <!-- Desktop Navigation -->
 <!-- Desktop Navigation -->
@@ -105,7 +101,7 @@ body {
             link.classList.remove("font-bold");
           });
 
-          const activeLink = document.querySelector(.nav-link[data-target="${id}"]);
+          const activeLink = document.querySelector(`.nav-link[data-target="${id}"]`);
           if (activeLink) {
             activeLink.classList.add("text-primary");
             activeLink.classList.add("font-bold");
@@ -1311,77 +1307,84 @@ I began my proper intern preparation in May ’23, knowing it was quite late. I 
 </div>
 </section>
 <!-- Footer -->
-<footer class="bg-gray-900 text-white pt-16 pb-8">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-<!-- Column 1 -->
-<div>
-<h3 class="text-xl font-semibold mb-4">Career Development Wing</h3>
-<p class="text-gray-400 mb-6">Empowering students to build successful careers through guidance, training, and industry connections.</p>
-<div class="flex space-x-4">
-<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
-<i class="ri-facebook-fill"></i>
-</a>
-<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
-<i class="ri-twitter-fill"></i>
-</a>
-<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
-<i class="ri-instagram-line"></i>
-</a>
-<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
-<i class="ri-linkedin-fill"></i>
-</a>
-</div>
-</div>
-<!-- Column 2 -->
-<div>
-<h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-<ul class="space-y-3">
-<li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
-<li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
-<li><a href="#itp" class="text-gray-400 hover:text-white transition">Internship Training Program</a></li>
-<li><a href="#collaborations" class="text-gray-400 hover:text-white transition">Collaborations</a></li>
-<li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
-</ul>
-</div>
-<!-- Column 3 -->
-<div>
-<h3 class="text-xl font-semibold mb-4">Resources</h3>
-<ul class="space-y-3">
-<li><a href="#" class="text-gray-400 hover:text-white transition">Resume Templates</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition">Interview Preparation</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition">Technical Resources</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition">Career Guidance</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition">Workshops & Events</a></li>
-</ul>
-</div>
-<!-- Column 4 -->
-<div>
-<h3 class="text-xl font-semibold mb-4">Contact</h3>
-<ul class="space-y-3">
-<li class="flex items-start">
-<i class="ri-map-pin-line mt-1 mr-3"></i>
-<span class="text-gray-400">Career Development Wing, IIT Kanpur, Kanpur, UP 208016</span>
-</li>
-<li class="flex items-center">
-<i class="ri-mail-line mr-3"></i>
-<a href="mailto:anc@iitk.ac.in" class="text-gray-400 hover:text-white transition">anc@iitk.ac.in</a>
-</li>
-<li class="flex items-center">
-<i class="ri-phone-line mr-3"></i>
-<span class="text-gray-400">+91 512 259 7236</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="border-t border-gray-800 pt-8">
-<div class="flex flex-col md:flex-row justify-between items-center">
-<p class="text-gray-400 mb-4 md:mb-0">© 2025 Career Development Wing, IIT Kanpur. All rights reserved.</p>
-<p class="text-gray-400">Designed by <span class="text-white">Abhinav Kumar Pandey</span></p>
-</div>
-</div>
-</div>
+<footer class="bg-white text-gray-900 pt-16 pb-8">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Column 1 -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Career Development Wing</h3>
+        <p class="text-gray-600 mb-6">
+          Empowering students to build successful careers through guidance, training, and industry connections.
+        </p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary transition">
+            <i class="ri-facebook-fill text-gray-700"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary transition">
+            <i class="ri-twitter-fill text-gray-700"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary transition">
+            <i class="ri-instagram-line text-gray-700"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary transition">
+            <i class="ri-linkedin-fill text-gray-700"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-600 hover:text-primary transition">Home</a></li>
+          <li><a href="#about" class="text-gray-600 hover:text-primary transition">About Us</a></li>
+          <li><a href="#itp" class="text-gray-600 hover:text-primary transition">Internship Training Program</a></li>
+          <li><a href="#collaborations" class="text-gray-600 hover:text-primary transition">Collaborations</a></li>
+          <li><a href="#contact" class="text-gray-600 hover:text-primary transition">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Resources</h3>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-600 hover:text-primary transition">Resume Templates</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary transition">Interview Preparation</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary transition">Technical Resources</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary transition">Career Guidance</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary transition">Workshops & Events</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Contact</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <i class="ri-map-pin-line mt-1 mr-3 text-gray-700"></i>
+            <span class="text-gray-600">Career Development Wing, IIT Kanpur, Kanpur, UP 208016</span>
+          </li>
+          <li class="flex items-center">
+            <i class="ri-mail-line mr-3 text-gray-700"></i>
+            <a href="mailto:ug_anc@iitk.ac.in" class="text-gray-600 hover:text-primary transition">ug_anc@iitk.ac.in</a>
+          </li>
+          <li class="flex items-center">
+            <i class="ri-phone-line mr-3 text-gray-700"></i>
+            <span class="text-gray-600">+91 512 259 7236</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-600 mb-4 md:mb-0">© 2025 Career Development Wing, IIT Kanpur. All rights reserved.</p>
+        <p class="text-gray-600">Designed by <span class="text-gray-600 font-semibold">Abhinav Kumar Pandey & Palak Agarwal</span></p>
+      </div>
+    </div>
+  </div>
 </footer>
+
 <!-- Back to Top Button -->
 <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 shadow-lg">
 <i class="ri-arrow-up-line ri-lg"></i>
