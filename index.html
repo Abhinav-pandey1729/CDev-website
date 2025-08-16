@@ -63,28 +63,31 @@ body {
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-black dark:text-white">
 <!-- Header -->
-<header class="bg-white dark:bg-gray-950 shadow-sm sticky top-0 z-50">
+<header class="bg-white dark:bg-gray-950 shadow-sm sticky top-0 z-50 ">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16">
+<div class="flex justify-between items-center h-20">
 <div class="flex items-center gap-2">
 <a href="https://www.anciitk.co.in/" class="flex items-center ">
-  <img src="./Cdev_logo.png" alt="CDEV Logo" class="h-20 w-auto mr-4">           
-  <img src="https://www.anciitk.co.in/favicon.ico" alt="CDEV Logo" class="h-10 w-auto">
+  <img src="./Cdev_logo.png" alt="CDEV Logo" class="h-20 w-21">           
+ 
 
 </a>
 </div>
 <div class="hidden md:block text-center">
-<span class="text-black dark:text-white font-medium">Career and Developement &ndash; Academic and Career Council, IIT Kanpur</span>
+<span class="text-xl text-bold text-black dark:text-white font-medium">Career Developement Wing &ndash; Academic and Career Council, IIT Kanpur</span>
 </div>
 <!-- Desktop Navigation -->
 <!-- Desktop Navigation -->
-<nav class="hidden md:flex items-center space-x-8">
+<nav class="hidden md:flex items-center space-x-8 ml-5 mr-0">
   <a href="#home" class="nav-link text-primary font-medium" data-target="home">Home</a>
   <a href="#about" class="nav-link text-black dark:text-white hover:text-primary font-medium" data-target="about">About</a>
   <a href="#itp" class="nav-link text-black dark:text-white hover:text-primary font-medium" data-target="itp">ITP</a>
   <a href="#collaborations" class="nav-link text-black dark:text-white hover:text-primary font-medium" data-target="collaborations">Collaborations</a>
   <a href="#contact" class="nav-link text-black dark:text-white hover:text-primary font-medium" data-target="contact">Contact</a>
 </nav>
+<button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors">
+  <i id="theme-toggle-icon" class="ri-sun-line"></i>
+</button>
 <!--Navigation-->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -117,9 +120,8 @@ body {
 </script>
 
 <!-- Dark Mode Toggle -->
-<button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors">
-  <i id="theme-toggle-icon" class="ri-sun-line"></i>
-</button>
+
+
 </nav>
 <!-- Mobile Navigation Button -->
 <div class="md:hidden flex items-center gap-2">
@@ -1312,7 +1314,10 @@ I began my proper intern preparation in May ’23, knowing it was quite late. I 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
       <!-- Column 1 -->
       <div>
-        <h3 class="text-xl font-semibold mb-4">Career Development Wing</h3>
+         <div class="flex items-center space-x-3 pb-3">
+        <img src="https://www.anciitk.co.in/favicon.ico" alt="CDEV Logo" class="h-10 w-auto">
+        <h3 class="text-xl font-semibold mb-0">Career Development Wing</h3>
+      </div>
         <p class="text-gray-600 mb-6">
           Empowering students to build successful careers through guidance, training, and industry connections.
         </p>
@@ -1348,11 +1353,9 @@ I began my proper intern preparation in May ’23, knowing it was quite late. I 
       <div>
         <h3 class="text-xl font-semibold mb-4">Resources</h3>
         <ul class="space-y-3">
-          <li><a href="#" class="text-gray-600 hover:text-primary transition">Resume Templates</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-primary transition">Interview Preparation</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-primary transition">Technical Resources</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-primary transition">Career Guidance</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-primary transition">Workshops & Events</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1-V_02xy2OYvv2oisw0bTuc2fDcN1mrIj" class="text-gray-600 hover:text-primary transition">Resume Templates</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1zJBCoNXUq-21GLSjNtL3WYQohwTK-M6W" class="text-gray-600 hover:text-primary transition">Training Sessions</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1mrAamEIaywvB2Y4L4f1-PugDWsaKa5WM" class="text-gray-600 hover:text-primary transition">Preparation Resources</a></li>
         </ul>
       </div>
 
