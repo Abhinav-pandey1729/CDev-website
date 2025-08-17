@@ -63,35 +63,65 @@ body {
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-black dark:text-white">
 <!-- Header -->
-<header class="bg-white dark:bg-gray-950 shadow-sm sticky top-0 z-50 ">
 <header class="bg-white dark:bg-gray-950 shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
-      
-      <!-- Logo + Text in same flex -->
+
+      <!-- Logo + Text -->
       <div class="flex items-center">
         <a href="https://www.anciitk.co.in/" class="flex items-center">
           <img src="./Cdev_logo.png" alt="CDEV Logo" class="h-20 w-21">
         </a>
-        <span class="ml-2 text-xl font-medium text-black dark:text-white">
-          Career Development Wing &ndash; Academic and Career Council, IIT Kanpur
+        <span class="md:hidden ml-2 text-sm text-black dark:text-white">
+          Career Development Wing - AnC Council
+        </span>
+        <span class="hidden md:inline ml-2 text-xl font-medium text-black dark:text-white">
+          Career Development Wing – Academic and Career Council, IIT Kanpur
         </span>
       </div>
 
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 ml-5">
+        <a href="#home" class="nav-link text-primary font-medium dark:hover:text-primary" data-target="home">Home</a>
+        <a href="#about" class="nav-link text-black dark:text-white hover:text-primary font-medium dark:hover:text-primary" data-target="about">About</a>
+        <a href="#itp" class="nav-link text-black dark:text-white hover:text-primary font-medium dark:hover:text-primary" data-target="itp">ITP</a>
+        <a href="#collaborations" class="nav-link text-black dark:text-white hover:text-primary font-medium dark:hover:text-primary" data-target="collaborations">Collaborations</a>
+        <a href="#contact" class="nav-link text-black dark:text-white hover:text-primary font-medium dark:hover:text-primary" data-target="contact">Contact</a>
 
-<!-- Desktop Navigation -->
-<!-- Desktop Navigation -->
-<nav class="hidden md:flex items-center space-x-8 ml-5 mr-0">
-  <a href="#home" class="nav-link text-primary font-medium" data-target="home">Home</a>
-  <a href="#about" class="nav-link text-black dark:text-white hover:text-primary font-medium" data-target="about">About</a>
-  <a href="#itp" class="nav-link text-black dark:text-white hover:text-primary font-medium" data-target="itp">ITP</a>
-  <a href="#collaborations" class="nav-link text-black dark:text-white hover:text-primary font-medium" data-target="collaborations">Collaborations</a>
-  <a href="#contact" class="nav-link text-black dark:text-white hover:text-primary font-medium" data-target="contact">Contact</a>
-</nav>
-<button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors">
-  <i id="theme-toggle-icon" class="ri-sun-line"></i>
-</button>
-<!--Navigation-->
+        <!-- Dark Mode Toggle (Desktop) -->
+        <button id="theme-toggle" type="button" aria-label="Toggle dark mode" 
+          class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors">
+          <i id="theme-toggle-icon" class="ri-sun-line"></i>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu Buttons -->
+      <div class="md:hidden flex items-center gap-2">
+        <button id="theme-toggle-mobile" class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300">
+          <i class="ri-sun-line"></i>
+        </button>
+        <button id="mobile-menu-button" class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300">
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+
+    </div> 
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class=" hidden pb-4 bg-white dark:bg-gray-950">
+      <div class="flex flex-col space-y-3">
+        <a href="#home" class="nav-link text-primary font-medium py-2 dark:hover:text-primary" data-target="home">Home</a>
+        <a href="#about" class="nav-link text-black dark:text-white hover:text-primary font-medium py-2 dark:hover:text-primary" data-target="about">About</a>
+        <a href="#itp" class="nav-link text-black dark:text-white hover:text-primary font-medium py-2 dark:hover:text-primary" data-target="itp">ITP</a>
+        <a href="#collaborations" class="nav-link text-black dark:text-white hover:text-primary font-medium py-2 dark:hover:text-primary" data-target="collaborations">Collaborations</a>
+        <a href="#contact" class="nav-link text-black dark:text-white hover:text-primary font-medium py-2 dark:hover:text-primary" data-target="contact">Contact</a>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- JS for Section Highlight + Mobile Menu Toggle -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
@@ -101,53 +131,45 @@ body {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute("id");
-
           navLinks.forEach(link => {
-            link.classList.remove("text-primary");
-            link.classList.remove("font-bold");
+            link.classList.remove("text-primary", "font-bold");
+            link.classList.add("text-black", "dark:text-white");
           });
-
           const activeLink = document.querySelector(`.nav-link[data-target="${id}"]`);
           if (activeLink) {
-            activeLink.classList.add("text-primary");
-            activeLink.classList.add("font-bold");
+            activeLink.classList.remove("text-black", "dark:text-white");
+          activeLink.classList.add("text-primary", "font-bold");
           }
         }
       });
-    }, {
-      threshold: 0.3, // adjust depending on when you want the link to activate
-    });
+    }, { threshold: 0.1 });
 
     sections.forEach(section => observer.observe(section));
-  });
+
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (mobileMenuButton && mobileMenu) {
+    // Toggle menu on button click
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Hide menu when a link is clicked
+    document.querySelectorAll("#mobile-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+    mobileMenuButton.addEventListener("click", () => {
+  console.log("Menu button clicked!"); // debug
+  mobileMenu.classList.toggle("hidden");
+});
+
+  }
+});
 </script>
 
-<!-- Dark Mode Toggle -->
-
-
-</nav>
-<!-- Mobile Navigation Button -->
-<div class="md:hidden flex items-center gap-2">
-<button id="theme-toggle-mobile" class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300">
-<i class="ri-sun-line"></i>
-</button>
-<button id="mobile-menu-button" class="w-10 h-10 flex items-center justify-center text-black dark:text-gray-300">
-<i class="ri-menu-line ri-lg"></i>
-</button>
-</div>
-</div>
-<!-- Mobile Navigation Menu -->
-<div id="mobile-menu" class="md:hidden hidden pb-4 bg-white dark:bg-gray-950">
-<div class="flex flex-col space-y-3">
-<a href="#" class="text-primary font-medium py-2">Home</a>
-<a href="#about" class="text-black dark:text-white hover:text-primary font-medium py-2">About</a>
-<a href="#itp" class="text-black dark:text-white hover:text-primary font-medium py-2">ITP</a>
-<a href="#collaborations" class="text-black dark:text-white hover:text-primary font-medium py-2">Collaborations</a>
-<a href="#contact" class="text-black dark:text-white hover:text-primary font-medium py-2">Contact</a>
-</div>
-</div>
-</div>
-</header>
 <!-- Hero Section -->
 <section id="home" class="hero-section py-20 md:py-32">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -163,7 +185,7 @@ body {
 
 <!-- Featured Initiatives -->
 
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="container mt-5 mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-12">
 <h2 class="text-3xl font-bold text-black dark:text-white mb-4">Our Key Initiatives</h2>
 <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Discover the programs and services offered by the Career Development Wing to help students navigate their professional journey.</p>
@@ -1230,7 +1252,7 @@ I began my proper intern preparation in May ’23, knowing it was quite late. I 
 <div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
 <div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
 <div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
-<img src="./CareerWing/aayush.jpg">
+<img src="/CareerWing/aayush.jpg">
 </div>
 </div>
 <h4 class="text-lg font-semibold text-black dark:text-white mb-1">Aayush Kumar</h4>
@@ -1248,7 +1270,7 @@ I began my proper intern preparation in May ’23, knowing it was quite late. I 
 <div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
 <div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
 <div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
-<img src="./CareerWing/karmanya_goyal.jpeg">
+<img src="/CareerWing/karmanya_goyal.jpeg">
 </div>
 </div>
 <h4 class="text-lg font-semibold text-black dark:text-white mb-1">Karmanya Goyal</h4>
@@ -1266,14 +1288,14 @@ I began my proper intern preparation in May ’23, knowing it was quite late. I 
 <div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
 <div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
 <div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
-<img src="./CareerWing/aditya_sati.jpg">
+<img src="/CareerWing/aditya_sati.jpg">
 </div>
 </div>
 <h4 class="text-lg font-semibold text-black dark:text-white mb-1">Aditya Sati</h4>
 <p class="text-gray-600 dark:text-gray-300 text-sm mb-3">Manager, Career Development Wing</p>
 <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
 <i class="ri-mail-line mr-2"></i>
-<a href="mailto:aityasati23@iitk.ac.in" class="hover:text-primary">aityasati23@iitk.ac.in</a>
+<a href="mailto:adityasati23@iitk.ac.in" class="hover:text-primary">adityasati23@iitk.ac.in</a>
 </div>
 <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
 <i class="ri-linkedin-box-line mr-2"></i>
@@ -1284,7 +1306,7 @@ I began my proper intern preparation in May ’23, knowing it was quite late. I 
 <div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition">
 <div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
 <div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
-<img src="./CareerWing/aryamann.jpeg">
+<img src="/CareerWing/aryamann.jpeg">
 </div>
 </div>
 <h4 class="text-lg font-semibold text-black dark:text-white mb-1">Aryamann Srivastava</h4>
@@ -1302,7 +1324,7 @@ I began my proper intern preparation in May ’23, knowing it was quite late. I 
 <div class="bg-white dark:bg-gray-900 rounded-lg p-6 custom-shadow hover:shadow-md transition col-span-1 sm:col-span-2 md:col-span-1 mx-auto sm:mx-0 sm:col-start-1 md:col-start-auto">
 <div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
 <div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
-<img src="./CareerWing/ayush_kumar.jpg">
+<img src="/CareerWing/ayush_kumar.jpg">
 </div>
 </div>
 <h4 class="text-lg font-semibold text-black dark:text-white mb-1">Ayush Kumar</h4>
